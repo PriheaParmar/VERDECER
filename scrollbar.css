@@ -1,0 +1,33 @@
+
+
+/* Vertical scrollbar */
+::-webkit-scrollbar {
+    width: 5px; 
+    height: 2px; 
+    background-color: #100f0f; 
+}
+
+/* Horizontal scrollbar */
+::-webkit-scrollbar:horizontal {
+    height: 0px; 
+    width: 0px;
+    background-color: #100f0f; 
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: #100f0f; 
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb {
+    background-color: #747264; 
+    border-radius: 5px;
+}
+
+/* Thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555; 
+}
+
+

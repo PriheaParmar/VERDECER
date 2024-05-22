@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JOIN US</title>
+
+<!--===============================================FONTS======================================-->
+<link href='https://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=ZCOOL XiaoWei' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Send Flowers' rel='stylesheet'>
+
+<!--===========================================STYLESHEETS====================================-->
+<link rel="stylesheet" href="scrollbar.css">
+<link rel="stylesheet" href="join.css">
+
+</head>
+<body>
+  
+  <!------------[ BACKGROUND IMAGE ]----------->
+  <img src="bg-join.jpg" alt="background" class="bg-join">  
+  <!------------[ BACKGROUND GRADIENT ]----------->
+  <div class="gradient"></div>  
+  <!-----------------------------[ HEADER ]------------------------------------> 
+  <div class="header">
+    <!---------------[ MENU ]---------------->
+    <a href="menu.html" class="menu">  
+        <div class="container-1-1">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+      </div>
+    </a>
+    <!---------------[ DONATE BUTTON ]---------------->
+    <div class="container-1-2"><a href="http://localhost:3000/">Donate</a></div>
+    
+  </div>
+
+<!---------------[ FORM CONTAINER ]---------------->
+<div class="form-container">
+  
+<h2>JOIN US</h2>
+
+  <form id="form" method="post" action="https://script.google.com/macros/s/AKfycbwLytvufb9eu9KWck1CstxofECdE9Z1_dg54tTydjWR9ho-JTC2J7Hp-8_X-X2ZpPAP/exec">
+  <!---------------[ NAME ]---------------->
+  <label for="name" class="name">"May I have your name, please?"</label>
+  <input type="text" id="name" name="Name" required >
+
+  <!---------------[ EMAIL ]---------------->
+  <label for="email">"E-mail if you don't mind?"</label>
+  <input type="email" id="email" name="Email" >
+  <!---------------[ POSITION ]---------------->
+  <label for="position">"Have you thought about the position you'd like?"</label>
+    <select id="position" name="Position" required>
+      <option  disabled selected> <option>
+      <option value="Recycling Co-ordinator">Recycling Co-ordinator</option>
+      <option value="Doner">Doner</option>
+      <option value="Wildlife-Biologist">Wildlife-Biologist</option>
+      <option value="Renewable Energy Specialist">Renewable Energy Specialist</option>
+      <option value="Environment Planner">Environment Planner</option>
+      <option value="waste management specialist">waste management specialist</option>
+      <option value="Green Product Developer"> Green Product Developer</option>
+    </select>
+    <!---------------[ MESSAGES ]---------------->
+    <label for="message">"Would you like to say something?"<label>
+    <textarea id="message" name="Message" rows="4" ></textarea>
+    <!---------------[ SUBMIT BUTTON ]---------------->
+    <button type="submit" id="submit">Submit</button>
+</form>
+
+</div>
+<script>    // GRADIENT BG
+
+document.addEventListener('mousemove', (e) => {
+  const gradient = document.querySelector('.gradient');
+  const x = e.clientX / window.innerWidth * 100;
+  const y = e.clientY / window.innerHeight * 100;
+  gradient.style.backgroundPosition = `${x}% ${y}%`;
+});
+</script>
+
+<script>    // FORM TO GOOGLE SHEETS
+  const form = document.querySelector("#form")
+  const submitButton = document.querySelector("#submit")
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyHXsx-qiWwireL5grcBVBICayhZpmOMx0Q1YPg9xXcR_q5VD3d3o-v22DSgcw8NN2q/exec'
+
+  form.addEventListener('submit', e => {
+    submitButton.disabled = true
+    e.preventDefault()
+    let requestBody = new FormData(form)
+    fetch(scriptURL, { method: 'POST', body: requestBody})
+      .then(response => {
+          alert('Success!', response)
+          submitButton.disabled = false
+        })
+      .catch(error => {
+      alert('Error!', error.message)
+        submitButton.disabled = false
+
+      }
+      )
+  })
+</script>
+</body>
+</html>

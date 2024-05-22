@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Parks Map</title>
+    <!-- Include Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        #map { 
+            height: 100vh; 
+            cursor: pointer; /* Set cursor to pointer for the map */
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <!-- Include Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        const map = L.map('map').setView([51.505, -0.09], 13); // London coordinates as default
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        // Variables to store mouse pointer coordinates
+        let mouseX = 0;
+        let mouseY = 0;
+
+        // Update mouse pointer coordinates
+        document.addEventListener('mousemove', function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Update map view based on mouse pointer position
+        setInterval(function() {
+            const mapCenter = map.getSize().divideBy(2);
+            const viewHalf = Math.min(mapCenter.x, mapCenter.y);
+            const offset = map.mouseEventToContainerPoint({ clientX: mouseX, clientY: mouseY }).subtract(mapCenter);
+            const newCenter = map.containerPointToLatLng(mapCenter.subtract(offset.divideBy(viewHalf * 0.5)));
+
+            // Move the map slowly towards the new center
+            map.panTo(newCenter, { animate: false });
+        }, 100);
+
+        // Show user's current location on the map
+        map.locate({ setView: true, maxZoom: 16 });
+
+        // Handle location found event
+        function onLocationFound(e) {
+            L.marker(e.latlng).addTo(map)
+                .bindPopup("You are here").openPopup();
+        }
+
+        // Handle location error event
+        function onLocationError(e) {
+            alert("Location access denied. Please allow location access to see your current location.");
+        }
+
+        map.on('locationfound', onLocationFound);
+        map.on('locationerror', onLocationError);
+
+    </script>
+</body>
+</html>

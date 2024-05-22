@@ -1,0 +1,123 @@
+
+body {
+  font-family: 'Voltaire';
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: #100f0f;
+}
+
+.gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle, #f5f5dcb0 5%, #7472648a  , #100f0f 50%);
+  background-size: 300% 300%;
+  transition: background-position 0.3s;
+}
+
+.form-container {
+  color: #EEEDEB;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40vw;
+  transform: translate(-50%, -50%);
+  background-color: #3C3633;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 5px solid #E0CCBE;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width:39vw;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form-container button {
+  display: block;
+  width: 100%;
+  padding: 8px 20px;
+  background-color: #3C3633;
+  color: #EEEDEB;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  border: 5px solid #747264;
+}
+
+.form-container button:hover {
+  background-color: #747264;
+}
+
+.name{
+  color: #EEEDEB;
+}
+.header{
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  /* border: white 2px solid; */
+}
+
+.box-container-1{
+  height: 6vh;
+  width: 5vw;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  position: relative;
+  color: white;
+  /* border: 2px solid white; */
+  text-align:center;
+}
+
+.text-1{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-top: 5px;
+}
+
+
+
+.bg-donate{
+  position: absolute;
+  isolation: isolate;
+  rotate: 90deg;
+  height: 200vw;
+  width: 200vh;
+  top: -900px;
+  mix-blend-mode: color-dodge;
+}
+
+.linee{
+  width: 5vw;
+  height: 1px;
+  margin-top: 10px;
+  background:  linear-gradient(0.25turn ,#3C3633 10%,#E0CCBE 70%);;
+  transition: background 2s;
+}
+
+.box-container-1:hover .linee{
+  background:  linear-gradient(0.25turn ,#E0CCBE 10%,#3C3633 70%);;
+}

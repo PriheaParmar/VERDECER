@@ -1,0 +1,221 @@
+body{
+    background: #100f0f;
+}
+html {
+    scroll-behavior:smooth;
+}
+/*------[ HEADER ]---------*/
+.header{           
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+/*------[ MENU-LINES-CONTAINER ]----------*/
+.container-1-1{
+    height: 6vh;
+    width: 5vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    position: relative;
+    color: white;
+    text-align:center;
+}
+/*--------------[ MENU-LINES ]-----------*/
+.line{             
+    width: 5vw;
+    height: 1px;
+    margin-top: 10px;
+    background:  linear-gradient(0.25turn ,#3C3633 10%,#E0CCBE 70%);;
+    transition: background 2s;
+}
+/*--------------[ MENU-CONTAINER ]-----------*/
+.container-1-1:hover .line{    
+    background:  linear-gradient(0.25turn ,#E0CCBE 10%,#3C3633 70%);;
+}
+/*--------------[ VERDECER-LOGO ]-----------*/
+.logo{             
+    color: #747264;
+    font-family:'ZCOOL XiaoWei' ;
+    font-size: 30px;
+    margin-top: 15px;
+    background: #100f0f;
+    margin-left: 50px;
+}
+/*--------[ REGISTERED TRADEMARK ]--------*/
+sup{                  
+    font-size: 12px;
+}
+/*----------[ DONATE-CONTAINER ]--------*/
+.container-1-2{          
+    border: 1px solid #747264;
+    height: 4vh;
+    width: 8vw;
+    border-radius: 40px;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Voltaire';
+}
+.container-1-2:hover{        
+    background: #747264;
+}
+/*--------------[ LINKS ]-----------*/
+a, a:link, a:visited, a:visited:active, a:link:active{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+/*--------------[ TITLE ]-----------*/
+.text-container-1-1{       
+    text-align: center;
+    font-size: 100px;
+    font-family: 'Voltaire';
+    padding-top: 5vw;
+    color:#E0CCBE ;
+    z-index: 100;
+    background-color: #100f0f;
+}
+/*--------------[ INTRO ]-----------*/
+#text-container-1-2{   
+    text-align: center;
+    font-size: 20px;
+    padding-top: 6vh;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    font-family:'ZCOOL XiaoWei' ;
+    color: #EEEDEB;
+    margin-bottom: 100vh;
+    background: #100f0f;
+}
+/* Define the initial state of the text */
+.typewriter-text {
+    opacity: 0;
+    overflow: hidden; /* Hide overflow to create typewriter effect */
+    white-space: nowrap; /* Keep text in one line */
+}
+
+/* Animation for the typewriter effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Apply animation to the text */
+.typewriter-text.in-view {
+    animation: typing 2s steps(20) forwards;
+}
+/*--------------[ IMAGE CONTAINERS ]-----------*/
+.image-container-1 {
+    position: relative;
+    transform: translateY(-50%);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+/*--------------[ VEGETABLE IMAGE ]-----------*/
+.vegies{
+    width: 100vw;
+    height: 150vh;
+    object-fit: cover;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, 0);
+    transition: top 0.3s ease; 
+}
+/*--------------[ CLOTHES IMAGE ]-----------*/
+.clothes{
+    width: 100vw;
+    height: 160vh;
+    object-fit: cover;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, 0);
+    transition: top 0.3s ease; 
+}
+/*--------------[ SKIN-CARE IMAGE ]-----------*/
+.skin{
+    width: 100vw;
+    height: 150vh;
+    object-fit: cover;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, 0);
+    transition: top 0.3s ease; 
+}
+/*--------------[ SERVICE-TITLE CONTAINER ]-----------*/
+.box-1, .box-2, .box-3{
+    height: 35vh;
+    width: 30vw;
+    padding: auto;
+    z-index: 4;
+    isolation: isolate;
+    margin: auto;
+    margin-top: 30vh   ;
+    background: #100f0f;
+    font-family: 'Voltaire';
+    filter: none;
+}
+/*--------------[ TITLES ]-----------*/
+.text{
+    text-align: center;
+    font-size: 40px;
+    padding-top: 20px;
+    color: #E0CCBE;
+}
+/*--------------[ CONTEXT ]-----------*/
+.text-1{
+    color: white ;
+    font-family: 'ZCOOL XiaoWei';
+    text-align: center;
+    margin-top: 5vh;
+    z-index: 5;
+}
+/*--------------[ ARROW CONTAINER ]-----------*/
+.arrow{
+    height: 5vh;
+    width: 7vw;
+    margin: auto;
+    margin-top: 5vh;
+    background: #747264;
+    border-radius: 40px;
+}
+/*--------------[ ARROW IMAGE ]-----------*/
+.img-arrow{
+    height: 70px;
+    overflow: hidden;
+    margin-left: 20px;
+    margin-top: -20px;
+    mix-blend-mode:multiply
+}
+/*--------------[ DIVIDER ]-----------*/
+.blur{
+    background: #100f0f;
+    position: absolute;
+    height: 300px;
+    width: 150vw;
+    left: -10vw;
+    filter: blur(100px);
+    z-index: 2;
+    margin-top: -70vh;
+    opacity: 80%;
+}
+/*--------------[ CENTRE LINE ]-----------*/
+.line-bottom {
+    width: 1px;
+    height: 100vh; 
+    background-color: #E0CCBE;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: height 0.5s ease;
+    z-index: -1;
+}
+/*--------------[ LINKS ]-----------*/
+a, a:link, a:visited, a:visited:active, a:link:active{
+    text-decoration: none;
+    color: #747264;
+    font-size: 20px;
+}

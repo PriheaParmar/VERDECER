@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--================================================FONTS======================================-->
+<link href='https://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=ZCOOL XiaoWei' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Send Flowers' rel='stylesheet'>
+<link rel="stylesheet" href="scrollbar.css">
+<!--=============================================STYLESHEETS====================================-->
+<link rel="stylesheet" href="farmer.css">
+
+<title>Support Farmer</title>
+
+</head>
+<body>
+  
+  <img src="bg-farmers.jpg" alt="background" class="bg-join">  <!--BACKGROUND-IMAGE-->
+  <div class="gradient"></div>  <!--BACKGROUND-GRADIENT-->
+
+  <div class="header"><!--HEADER-->
+
+    <a href="menu.html" class="menu">   <!--MENU-->
+        <div class="container-1-1">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+      </div>
+    </a>
+    
+    <div class="container-1-2"><a href="donate.html">Donate</a></div>
+    
+    </div>
+
+  </div>
+
+<div class="form-container">
+  
+  <h2>Agricultural Allies: "Support Farmers Today"</h2>
+
+  <form action="" method="post">
+
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    
+    <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="purpose">Donation Purpose:</label>
+<select id="purpose" name="purpose" required>
+    <option value="">Select Purpose</option>
+    <option value="general_support">General Support</option>
+    <option value="crop_assistance">Crop Assistance</option>
+    <option value="livestock_support">Livestock Support</option>
+    <option value="training_education">Training and Education</option>
+    <option value="infrastructure_development">Infrastructure Development</option>
+</select><br><br>
+
+
+        <label for="amount">Donation Amount:</label>
+        <input type="number" id="amount" name="amount" min="1" required><br><br>
+        <label for="comments">Additional Comments:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+        <label>
+          <input type="checkbox" id="terms" name="terms" required>
+          I have read and agree to the <a href="terms_and_conditions.html" target="_blank">terms and conditions</a>.
+      </label><br><br>
+      
+
+    <input type="submit" value="Donate">
+</form>
+
+</div>
+<script>    // GRADIENT BG
+
+document.addEventListener('mousemove', (e) => {
+  const gradient = document.querySelector('.gradient');
+  const x = e.clientX / window.innerWidth * 100;
+  const y = e.clientY / window.innerHeight * 100;
+  gradient.style.backgroundPosition = `${x}% ${y}%`;
+});
+</script>
+
+<script>    // FORM TO GOOGLE SHEETS
+  const form = document.querySelector("#form")
+  const submitButton = document.querySelector("#submit")
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyHXsx-qiWwireL5grcBVBICayhZpmOMx0Q1YPg9xXcR_q5VD3d3o-v22DSgcw8NN2q/exec'
+
+  form.addEventListener('submit', e => {
+    submitButton.disabled = true
+    e.preventDefault()
+    let requestBody = new FormData(form)
+    fetch(scriptURL, { method: 'POST', body: requestBody})
+      .then(response => {
+         alert('Success!', response)
+         submitButton.disabled = false
+        })
+      .catch(error => {
+      alert('Error!', error.message)
+        submitButton.disabled = false
+
+      }
+      )
+  })
+</script>
+<script>
+    document.getElementById('amount_custom').addEventListener('change', function() {
+        if (this.checked) {
+            document.getElementById('custom_amount').style.display = 'block';
+            document.getElementById('custom_amount').required = true; // make custom amount field required
+        } else {
+            document.getElementById('custom_amount').style.display = 'none';
+            document.getElementById('custom_amount').required = false; // make custom amount field optional
+        }
+    });
+</script>
+</body>
+</html>

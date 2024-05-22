@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Emporium</title>
+    <link href='https://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=ZCOOL XiaoWei' rel='stylesheet'>
+    <link rel="stylesheet" href="scrollbar.css">
+
+    <link rel="stylesheet" href="store.css">
+</head>
+<body>
+    
+<!-----------------------------[ HEADER ]------------------------------------> 
+<div class="header">
+    <!---------------[ MENU ]---------------->
+    <a href="menu.html" class="container-1-1">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </a>
+    <!---------------[ VERDECER LOGO ]---------------->
+    <div class="logo"><a href="index.html">Verdecer<sup>&reg;</sup></a></div>
+    <!---------------[ DONATE BUTTON ]---------------->
+    <div class="container-1-2">Donate</div>
+</div>
+<!---------------[ TITLE ]---------------->
+    <div class="text-container-1-1">Our Emporium</div>
+    <!---------------[ INTRO ]---------------->
+    <div class="typewriter-text" id="text-container-1-2">
+        Welcome to our eco emporium, where style meets sustainability! Discover a curated collection of green goods for your home and lifestyle. Make a positive impact with every purchase. Join us on the journey to a greener future!
+    </div>
+    <!---------------[ CENTRE LINE ]---------------->
+    <div class="line-bottom"></div>
+    
+    <!---------------[ PURE-PRODUCE ]---------------->
+    <div class="blur"></div>    <!-------[ DIVIDER ]--------->
+    <div class="image-container-1">
+        <img src="vegies.jpeg"  class="vegies"> <!------[ VEGETABLES IMAGE ]-------->
+        <div class="box-1">
+            <div class="text">PureProduce</div>
+            <div class="text-1">Our organic fruits and vegetables are grown with care, free from chemicals and pesticides. Taste the difference of truly pure produce.</div>
+            <div class="arrow">
+                <a href="pureproduce.html"><img src="arrow.png"  class="img-arrow"></a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!---------------[ ECO-CHIC ]---------------->
+    <div class="blur"></div>    <!-------[ DIVIDER ]--------->
+    <div class="image-container-1">
+        <img src="clothes.jpeg"  class="clothes"> <!------[ CLOTHES IMAGE ]-------->
+        <div class="box-2">
+            <div class="text">EcoChic</div>
+            <div class="text-1">Our fashion-forward, eco-friendly clothing is designed for the conscious consumer who values both fashion and the planet. Step into a world where fashion makes a difference.</div>
+            <div class="arrow">
+                <a href="ecochic.html"><img src="arrow.png"  class="img-arrow"></a>
+            </div>
+        </div>
+        </div>
+    </div> 
+    <!---------------[ GREEN-GLOW ]---------------->
+    <div class="blur"></div>    <!-------[ DIVIDER ]--------->
+    <div class="image-container-1">
+        <img src="skincare.jpg"  class="skin"><!------[ SKINCARE IMAGE ]-------->
+        <div class="blur"></div>
+        <div class="box-3">
+            <div class="text">GreenGlow</div>
+            <div class="text-1">Discover pure beauty with [Your Brand Name]. Our natural, chemical-free skincare range nourishes your skin for a radiant glow. Embrace nature's beauty secrets.</div>
+            <div class="arrow">
+                <a href="greenglow.html"><img src="arrow.png" class="img-arrow"></a>
+            </div>
+        </div>
+    </div>
+    <div class="blur"></div>
+
+</body>
+
+<!---------------[ IMAGES ANIMATIONS ]---------------->
+<script>
+    var vegiesImage = document.querySelector('.vegies');
+    window.addEventListener('scroll', function() {
+        var scrollAmount = window.pageYOffset * -0.2; 
+        vegiesImage.style.top = scrollAmount + 'px';
+    });
+
+    var clothesImage = document.querySelector('.clothes');
+    window.addEventListener('scroll', function() {
+        var scrollAmount = window.pageYOffset * -0.2; 
+        clothesImage.style.top = scrollAmount + 'px';
+    });
+
+    var skinImage = document.querySelector('.skin');
+    window.addEventListener('scroll', function() {
+        var scrollAmount = window.pageYOffset * -0.2; 
+        skinImage.style.top = scrollAmount + 'px';
+    });
+</script>
+<!---------------[ CENTRE-LINE ]---------------->
+<script>
+    window.addEventListener('scroll', () => {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+        const remainingScroll = scrollableHeight - scrolled;
+        const lineHeight = (remainingScroll / scrollableHeight) * 100;
+        document.querySelector('.line-bottom').style.height = lineHeight + 'vh';
+    });
+</script>
+<script>
+    // Select the text element
+    const textElement = document.querySelector('.typewriter-text');
+
+    // Create an Intersection Observer for the text element
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add the 'in-view' class to start the typewriter animation
+                textElement.classList.add('in-view');
+            } else {
+                // Remove the 'in-view' class if not in view
+                textElement.classList.remove('in-view');
+            }
+        });
+    });
+
+    // Observe the text element
+    observer.observe(textElement);
+</script>
+</html>

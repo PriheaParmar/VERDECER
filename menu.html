@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>MENU</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet'>
+  
+  <link href='https://fonts.googleapis.com/css?family=ZCOOL XiaoWei' rel='stylesheet'>
+
+
+  <link rel="stylesheet" href="menu.css">
+
+</head>
+<body><div class="gradient"></div>
+  <img src="bg-menu.jpg" alt="" class="bg">
+
+<div class="menu" id="menu">
+<ul >
+    <li><a target="_self" href="indexx.html" data-text="Home">Home</a></li>
+    <li><a target="_self" href="join.html" data-text="Join">Join</a></li>
+    <li><a target="_self" href="store.html" data-text="Store">Store</a></li>
+    <li><a target="self" href="http://localhost:3000/" data-text="Donation">Donation</a></li>
+    <li><a target="_self" href="" data-text="Extras">Extras</a></li>
+    <li><a target="selg" href="" data-text="Contact">Contact</a></li>
+  </ul>
+</div>
+
+  
+</body>
+<script>
+    document.getElementById('menu').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent the default form submission
+      // Here you can add code to handle the form submission, such as sending data to a server
+      alert('Thank you for your donation!');
+    });
+    document.addEventListener('mousemove', (e) => {
+      const gradient = document.querySelector('.gradient');
+      const x = e.clientX / window.innerWidth * 100;
+      const y = e.clientY / window.innerHeight * 100;
+      gradient.style.backgroundPosition = `${x}% ${y}%`;
+    });
+    </script>
+</html>

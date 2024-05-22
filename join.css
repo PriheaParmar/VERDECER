@@ -1,0 +1,183 @@
+body{
+    margin: 0;padding: 0;
+}
+/* ---------[ BACKGROUND IMAGE ]--------*/
+.bg-join{       
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    opacity: 40%;
+}
+/* ---------[ BACKGROUND GRADIENT ]--------*/
+.gradient {       
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle, #f5f5dcb0 5%, #7472648a  , #100f0f 50%);
+    background-size: 300% 300%;
+    transition: background-position 0.3s;
+}
+/* ---------[ HEADER ]--------*/
+.header{            
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    z-index: 3;
+}
+/* -------[ MENU LINES CONTAINER ]-----*/
+.container-1-1{    
+    height: 6vh;
+    width: 5vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    position: relative;
+    color: white;
+    text-align:center;
+}
+/* ---------[ MENU  ]--------*/
+.menu{          
+    position: fixed;
+}
+
+/* ---------[ MENU LINES ]--------*/
+.line{             
+    width: 5vw;
+    height: 1.5px;
+    margin-top: 10px;
+    background:  linear-gradient(0.25turn ,#E0CCBE 10%,#3C3633 70%);;
+    transition: background 2s;
+}
+/* ---------[ MENU CONTAINER ]--------*/
+.container-1-1:hover .line{    
+    background:  linear-gradient(0.25turn ,#3C3633 10%,#E0CCBE 70%);;
+}
+.container-1-2{         
+    border: 1px solid #747264;
+    height: 4vh;
+    width: 8vw;
+    border-radius: 40px;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 90vw;
+    font-family: 'Voltaire';
+    margin-top: 15px;
+    z-index: 3;
+}
+/* ---------[ DONATE CONTAINER ]--------*/
+.container-1-2:hover{       
+    background: #747264;
+}
+/* ---------[ DONATE TEXTS ]--------*/
+.text-1-1{         
+    color: white;
+    z-index: 3;
+    font-size: 34px;
+}
+/* ---------[ JOIN US PAGE LINKS ]--------*/
+a, a:link, a:visited, a:visited:active, a:link:active{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+/* ---------[ FORM CONTAINER ]--------*/
+.form-container {       
+    color: #EEEDEB;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40vw;
+    transform: translate(-50%, -50%);
+    background-color: #3C3633;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 5px solid #E0CCBE;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.form-container:hover{       
+    box-shadow: 2px 2px 30px 2px black;
+    transition: box-shadow 3s;
+}
+/* ---------[ FORM TITLE ]--------*/
+.form-container h2 {        
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-family: 'Voltaire';
+    font-size: 60px;
+    color: #E0CCBE;
+}
+/* ---------[ NAME, EMAIL, POSITION AND MESSAGE ]--------*/
+.form-container label{ 
+    display: block;
+    margin-bottom: 20px;
+    font-family:'ZCOOL XiaoWei' ;
+    font-size: 20px;
+    color: #EEEDEB  ;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    font-family: 'Voltaire';
+    font-size: 15px;
+    width:39vw;
+    background: #b4b4b28a;
+    border: 4px solid #E0CCBE;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 40px;
+    color: black;
+    outline: none;
+}
+input:focus{
+    box-shadow: 0 0 30px #eeedeb82;
+}
+select:focus{
+    box-shadow: 0 0 30px #eeedeb82;
+}
+textarea:focus{
+    box-shadow: 0 0 30px #eeedeb82;
+}
+input::selection {
+    background-color: #007bff;
+    color: white;
+}
+
+.form-container select{
+    color: black;
+    width: 40vw;
+}
+.form-container textarea {
+    color: black;
+    margin-top: 10px;
+    border-radius: 30px;
+    width: 37.5vw;
+    padding: 15px;
+}
+.form-container button {
+    display: block;
+    width: 50vh;
+    height: 10vh;
+    margin: auto;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #3C3633;
+    color: #EEEDEB;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    border: 5px solid #E0CCBE;
+}
+.form-container button:hover {
+    background-color: #b4b4b28a;
+}

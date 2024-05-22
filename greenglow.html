@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GREEN GLOW</title>
+
+<!--===============================================FONTS======================================-->
+<link href='https://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=ZCOOL XiaoWei' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Send Flowers' rel='stylesheet'>
+
+<!--===========================================STYLESHEETS====================================-->
+<link rel="stylesheet" href="scrollbar.css">
+<link rel="stylesheet" href="greenglow.css">
+
+</head>
+
+<body>
+    <!-----------------------------[ HEADER ]------------------------------------> 
+    <div class="header">
+        <!---------------[ MENU ]---------------->
+        <a href="menu.html" class="container-1-1">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </a>
+        <!---------------[ VERDECER LOGO ]---------------->
+        <div class="logo"><a href="indexx.html">Verdecer<sup>&reg;</sup></a></div>
+        <!---------------[ DONATE BUTTON ]---------------->
+        <a href="http://localhost:3000/">
+            <div class="container-1-2">Donate</div>
+        </a>
+    </div>
+    <!-----------------------------[ MAIN CONTENT ]------------------------------>
+    <div class="main">
+        <!------------[ BACKGROUND IMAGE ]----------->
+        <img src="bg-pureproduce.jpg" alt="" class="bg">
+        <!---------------[ TITLE ]---------------->
+        <div class="text-container-1-1">GreenGlow</div>
+        <!---------------[ INTRO ]---------------->
+        <div class="text-container-1-2">"Discover eco-friendly skincare that's kind to your skin and the planet. Shop now for natural beauty."</div>
+        <!---------------[ GREEN-GLOW IMAGE CONTAINER ]---------------->
+    <div class="image-container-1">
+        <!---------------[ SOAP IMAGE ]---------------->
+        <div class="image-container-1-1">
+            <div class="soap">
+                <img class="image-1" src="soap.jpg">
+                <h1 class="text-1">Soap</h1>
+            </div>
+            <!---------------[ LIPBALM IMAGE ]---------------->
+            <div class="lipbalm">
+                <img class="image-1" src="lip.jpg">
+                <h1 class="text-2">Lip Balm</h1>
+            </div>
+            <!---------------[ SCRUB IMAGE ]---------------->
+            <div class="scrub">
+                <img class="image-1" src="scrub.jpg">
+                <h1 class="text-3">Scrub</h1>
+            </div>
+        </div>
+
+        <div class="image-container-2">
+            <!---------------[ DEODRANTS IMAGE ]---------------->
+            <div class="deodrants">
+                <img class="image-2" src="deodrants.jpg">
+                <h1 class="text-4">Deodrants</h1>
+            </div>
+            <!---------------[ BODY MIST IMAGE ]---------------->
+            <div class="mist">
+                <img class="image-2" src="mist.jpg">
+                <h1 class="text-5">Body Mist</h1>
+            </div>
+        </div>
+
+        <div class="image-container-3">
+            <!---------------[ FACEWASH IMAGE ]---------------->
+            <div class="facewash">
+                <img class="image-3" src="facewash.jpg">
+                <h1 class="text-6"> FaceWash</h1>
+            </div>
+            <!---------------[ SHAMPOO IMAGE ]---------------->
+            <div class="shampoo">
+                <img class="image-3" src="shampoo.jpg">
+                <h1 class="text-7"> Shampoo</h1>
+            </div>
+        </div>
+
+        <div class="image-container-2">
+            <!---------------[ LOTION IMAGE ]---------------->
+            <div class="lotion">
+                <img class="image-2" src="lotion.jpg">
+                <h1 class="text-8"> Lotion</h1>
+            </div>
+            <!---------------[ FACEMASK IMAGE ]---------------->
+            <div class="facemask">
+                <img class="image-2" src="facemask.jpg">
+                <h1 class="text-9">Facemask</h1>
+            </div>
+        </div>
+
+        <div class="image-container-1-1">
+            <!---------------[ HAIR-OIL IMAGE ]---------------->
+            <div class="hairoil">
+                <img class="image-1" src="hairoil.jpg">
+                <h1 class="text-10">Hair-oil</h1>
+            </div>
+            <!---------------[ MOISTURIZER IMAGE ]---------------->
+            <div class="moisturizer">
+                <img class="image-1" src="moisturizer.jpg">
+                <h1 class="text-11">Moisturizer</h1>
+            </div>
+            <!---------------[ SUN0SCREEN IMAGE ]---------------->
+            <div class="sunscreen">
+                <img class="image-1" src="sunscreen.jpg">
+                <h1 class="text-12">Sun-Screen</h1>
+            </div>
+        </div>
+    </div>
+
+    <!---------------[ CENTRE LINE ]---------------->
+    <div class="line-bottom"></div>
+</div>
+
+</body>
+<script>
+/*======================================IMAGES-ANIMATION=======================================*/
+    window.addEventListener('scroll', () => {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+        const remainingScroll = scrollableHeight - scrolled;
+
+        const margin1 = Math.max(200 - scrolled, 0);
+        const margin2 = Math.max(300 - scrolled, 0);
+        const margin3 = Math.max(400 - scrolled, 0);
+
+        document.querySelectorAll('.image-container-2').forEach((element, index) => {
+            if (index === 0) {
+                element.style.marginTop = `${margin1}px`;
+            } else {
+                element.style.marginTop = `${margin2}px`;
+            }
+        });
+        document.querySelector('.image-container-3').style.marginTop = `${margin3}px`;
+    });
+
+/*========================================CENTRE LINE-=========================================*/
+    window.addEventListener('scroll', () => {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+        const remainingScroll = scrollableHeight - scrolled;
+        const lineHeight = (remainingScroll / scrollableHeight) * 100;
+        document.querySelector('.line-bottom').style.height = lineHeight + 'vh';
+    });
+</script>
+</html>

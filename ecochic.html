@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECO CHIC</title>
+
+<!--===============================================FONTS======================================-->
+<link href='https://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=ZCOOL XiaoWei' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Send Flowers' rel='stylesheet'>
+
+<!--===========================================STYLESHEETS====================================-->
+<link rel="stylesheet" href="scrollbar.css">
+<link rel="stylesheet" href="echochic.css">
+</head>
+<body>
+    <!-----------------------------[ HEADER ]------------------------------------> 
+    <div class="header">
+        <!---------------[ MENU ]---------------->
+        <a href="menu.html" class="container-1-1">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </a>
+        <!---------------[ VERDECER LOGO ]---------------->
+        <div class="logo"><a href="index.html">Verdecer<sup>&reg;</sup></a></div>
+        <!---------------[ DONATE BUTTON ]---------------->
+        <a href="http://localhost:3000/">
+            <div class="container-1-2">Donate</div>
+        </a>
+    </div>
+    <!-----------------------------[ MAIN CONTENT ]------------------------------>
+    <div class="main">
+        <!------------[ BACKGROUND IMAGE ]----------->
+        <img src="bg-pureproduce.jpg" alt="" class="bg">
+        <!---------------[ TITLE ]---------------->
+        <div class="text-container-1-1">EcoChic</div>
+        <!---------------[ INTRO ]---------------->
+        <div class="text-container-1-2">Your source for fresh, eco-friendly fruits and vegetables. Our produce is grown sustainably, without synthetic chemicals, to bring you the best of nature while protecting the planet. Join us in promoting healthy living and a sustainable future.</div>
+    <!---------------[ ECO-CHIC IMAGE CONTAINER ]---------------->
+    <div class="image-container-1">
+        <!---------------[ TSHIRT IMAGE ]---------------->
+        <div class="image-container-1-1">
+            <div class="tshirt">
+                <img class="image-1" src="cotton.jpg">
+                <h1 class="text-1">Tshirt</h1>
+            </div>
+            <!---------------[ JEANS IMAGE ]---------------->
+            <div class="jeans">
+                <img class="image-1" src="jeans.jpg">
+                <h1 class="text-2">Jeans</h1>
+            </div>
+            <!---------------[ SOCKS IMAGE ]---------------->
+            <div class="socks">
+                <img class="image-1" src="socks.jpg">
+                <h1 class="text-3">Socks</h1>
+            </div>
+        </div>
+
+        <div class="image-container-2">
+            <!---------------[ HOODIES IMAGE ]---------------->
+            <div class="hoodies">
+                <img class="image-2" src="hoodies.jpg">
+                <h1 class="text-4">Hoodies</h1>
+            </div>
+            <!---------------[ DRESS IMAGE ]---------------->
+            <div class="dress">
+                <img class="image-2" src="dress.jpg">
+                <h1 class="text-5">Dress</h1>
+            </div>
+        </div>
+
+        <div class="image-container-3">
+            <!---------------[ SWEATER IMAGE ]---------------->
+            <div class="sweaters">
+                <img class="image-3" src="sweaters.jpg">
+                <h1 class="text-6"> Sweaters</h1>
+            </div>
+            <!---------------[ SHIRTS IMAGE ]---------------->
+            <div class="shirts">
+                <img class="image-3" src="shirts.jpg">
+                <h1 class="text-7"> Shirts</h1>
+            </div>
+        </div>
+
+        <div class="image-container-2">
+            <!---------------[ SCARF IMAGE ]---------------->
+            <div class="scarf">
+                <img class="image-2" src="scarf.jpg">
+                <h1 class="text-8"> Scarfs</h1>
+            </div>
+            <!---------------[ HATS IMAGE ]---------------->
+            <div class="hats">
+                <img class="image-2" src="hats.jpg">
+                <h1 class="text-9">Hats</h1>
+            </div>
+        </div>
+
+        <div class="image-container-1-1">
+            <!---------------[ FOOTWARE IMAGE ]---------------->
+            <div class="footware">
+                <img class="image-1" src="footware.jpg">
+                <h1 class="text-10">Footware</h1>
+            </div>
+            <!---------------[ BAGS IMAGE ]---------------->
+            <div class="bags">
+                <img class="image-1" src="bags.jpg">
+                <h1 class="text-11">Bags</h1>
+            </div>
+            <!---------------[ JACKETS IMAGE ]---------------->
+            <div class="jackets">
+                <img class="image-1" src="jacket.jpg">
+                <h1 class="text-12">jackets</h1>
+            </div>
+        </div>
+    </div>
+
+    <!---------------[ CENTRE LINE ]---------------->
+    <div class="line-bottom"></div>
+</div>
+
+</body>
+
+<script>
+/*======================================IMAGES-ANIMATION=======================================*/
+    window.addEventListener('scroll', () => {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+        const remainingScroll = scrollableHeight - scrolled;
+
+        const margin1 = Math.max(200 - scrolled, 0);
+        const margin2 = Math.max(300 - scrolled, 0);
+        const margin3 = Math.max(400 - scrolled, 0);
+
+        document.querySelectorAll('.image-container-2').forEach((element, index) => {
+            if (index === 0) {
+                element.style.marginTop = `${margin1}px`;
+            } else {
+                element.style.marginTop = `${margin2}px`;
+            }
+        });
+        document.querySelector('.image-container-3').style.marginTop = `${margin3}px`;
+    });
+
+/*========================================CENTRE LINE-=========================================*/
+    window.addEventListener('scroll', () => {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+        const remainingScroll = scrollableHeight - scrolled;
+        const lineHeight = (remainingScroll / scrollableHeight) * 100;
+        document.querySelector('.line-bottom').style.height = lineHeight + 'vh';
+    });
+</script>
+</html>

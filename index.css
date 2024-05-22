@@ -1,0 +1,652 @@
+body{
+    background: #100f0f;
+}
+
+/*============================================[PAGE-1]=====================================================*/
+.page-1{
+    height: 200vh;color: white;
+}
+/*-----------[ANIMATIONS ON PAGE-1]---------------*/
+@keyframes fadeInUp {
+    from {
+        visibility: visible; 
+        transform: translateY(50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+@keyframes scaleUp {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+/*------[ HEADER ]---------*/
+.header{            
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+/*------[ MENU-LINES-CONTAINER ]----------*/
+.container-1-1{     
+    height: 6vh;
+    width: 5vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    position: relative;
+    color: white;
+    text-align:center;
+}
+/*--------[ MENU ]---------- */
+.menu{         
+    position: fixed;
+    animation: fadeInUp 1s forwards;
+    animation-delay: 5s;
+    visibility: hidden;
+}
+/*--------------[ MENU-LINES ]-----------*/
+.line{              
+    width: 5vw;
+    height: 1px;
+    margin-top: 10px;
+    background:  linear-gradient(0.25turn ,#3C3633 10%,#E0CCBE 70%);
+    transition: background  4s;
+}
+/*--------------[ MENU-CONTAINER ]---------*/
+.container-1-1:hover .line{    
+    background:  linear-gradient(0.25turn ,#E0CCBE 10%,#3C3633 70%);
+}
+/*-----------[ DONATE-CONTAINER ]--------*/
+.container-1-2{          
+    border: 1px solid #747264;
+    height: 4vh;
+    width: 8vw;
+    border-radius: 40px;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 90vw;
+    font-family: 'Voltaire';
+    transition: background 1s;
+    animation: fadeInUp 1s forwards;
+    animation-delay: 5s;
+    visibility: hidden;
+}
+.container-1-2:hover{        
+    background: #747264;
+}
+/*--------------[ LINK ]-----------------*/
+a, a:link, a:visited, a:visited:active, a:link:active{
+    text-decoration: none;  color: white;  font-size: 20px;
+}
+/* -----------[ VERDECER-CONTAINER ]---------------*/
+.text-container-1-1{        
+    color:#E0CCBE ;
+    text-align: center;
+    font-size: 300px;
+    font-family: 'ZCOOL XiaoWei';
+    letter-spacing: -16px;
+    font-weight:200;
+    height: 40vh;    position: fixed;
+    margin-left: 20vw;
+    margin-top: 20vh;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1s ease, transform 1s ease;
+}
+/* ------[ VERDECER ]------------- */
+.text-1{                
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0s;
+    isolation: isolate;
+}
+.text-1-visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+/* ------[ INTR0-IMAGES-CONTAINER ]------*/
+.image-container-1{     
+    position: absolute;
+    top: 0;
+}
+.image-1-1,.image-1-2,.image-1-3,.image-1-4,.image-1-5,.image-1-6,.image-1-7{
+    visibility: hidden;
+    position: fixed;
+    transition: top 3s, bottom 3s, left 3s; 
+    animation: fadeInUp 1s forwards, scaleUp 1s forwards;
+    opacity: 60%;
+    z-index: -1;
+}
+/* -------------[ GREEN-MOUNTAIN ]---------*/
+.image-1-1{
+    height: 30vh;
+    width: 25vw;
+    top: 38vh;
+    left: 15vw;
+    animation-delay: 0s;
+}
+/* -------------[ BLACK-MOUNTAIN ]---------*/
+.image-1-2{
+    height: 25vh;
+    width: 20vw;
+    top: 15vh;
+    left: 22vw;
+    animation-delay:2500ms;
+}
+/* -------------[ SUN-FLOWER ]---------*/
+.image-1-3{
+    height: 46vh;
+    width: 12vw;
+    top: 45vh;
+    left: 30vw;
+    object-fit: cover;
+    animation-delay: 1000ms;
+}
+/* -------------[ BLACK-BEACH ]---------*/
+.image-1-4{
+    height: 30vh;
+    width: 25vw;
+    left: 55vw;
+    isolation: isolate;
+    top: 54vh;
+    mix-blend-mode:exclusion;
+    animation-delay: 3000ms;
+}
+/* -------------[ DEER ]------------*/
+.image-1-5{
+    height: 20vw;
+    width: 15vw;
+    top:33vh;
+    left: 41vw;
+    animation-delay: 2000ms;
+}
+/* -------------[ TREES ]---------*/
+.image-1-6{
+    height: 33vh;
+    width: 13vw;
+    top: 23vh;
+    left: 55vw;
+    animation-delay: 500ms;
+}
+/* -------------[ FOGGY-MOUNTAIN ]---------*/
+.image-1-7{
+    height: 25vh;
+    width: 20vw;
+    top: 15vh;
+    left: 65vw;
+    animation-delay: 1500ms;
+}
+/* -------------[ CENTER-LINE ]---------*/
+.center-line {
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 0;
+    isolation: isolate;
+    width: 1px;
+    background: linear-gradient(to top, rgb(224, 204, 190), #E0CCBE );
+    z-index: -4;
+    transition: height 0.3s, background-color 0.3s; 
+}
+
+#targetDiv{
+    height: 30vh;
+}
+
+/*============================================[PAGE-2]=====================================================*/
+
+.page-2{
+    border-bottom: 1px solid #E0CCBE;
+}
+/* -----------[ SLOGAN-CONTAINER ]-------- */
+.text-container-2{      
+    color: #E0CCBE; /* Change text color to white */
+    background: #100f0f;
+    font-family: 'Voltaire';
+    height: 15vh;
+    text-align: center;
+    font-size: 50px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    transition-delay: 1s;
+}
+.text-container-2.fade-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+/*----------[ SLOGAN-CONTEXT-CONTAINER  ]-----------*/
+.text-container-2-1{    
+    color: white;
+    background: #100f0f;
+    text-align: center;
+    padding-left: 250px;
+    padding-right: 250px;
+    font-size: 25px;
+    height: 15vh;
+    font-family: 'Voltaire';
+    opacity: 0;
+}
+/* -------[ BUTTERFLY-IMAGE-CONTAINER ]--------*/
+.image-container-2{     
+    margin: auto;
+    padding: auto;
+}
+/* -------------[ BUTTERFLY-IMAGE ]-----------*/
+.image-2-1{             
+    margin-left: 37vw;
+    margin-right: 37vw;
+    margin-bottom: -4px;
+    border-radius: 5px;
+    z-index: 5;
+    height: 50vh;
+}
+/*============================================[PAGE-3]=====================================================*/
+
+.page-3{
+    border-bottom: 1px solid #E0CCBE;
+    height: 130vh;
+}
+/* ---------[ PAGE-3-IMAGE-CONTAINER ]--------*/
+.image-container-3{     
+    display: flex;
+    justify-content: space-between;
+}
+/* -------------[ DONATE,JOIN-BG-IMAGE ]-----------*/
+.bg-3,.bg-3-1{
+    position: absolute;
+    height: 130vh;
+    width: 50vw;
+    z-index: -2;
+    opacity: 30%;
+    mix-blend-mode:lighten;
+}
+/* -------------[ JOIN-BG-IMAGE ]-----------*/
+.bg-3-1{
+    margin-left: 50vw;
+}
+/* -------------[ DONATE-CONTAINER ]-----------*/
+.box-3-1{
+    width: 30vw;
+    height: 85vh;
+    background: black;
+    margin: 10vw;
+    object-fit: cover;
+    overflow: hidden;
+}
+/* -------------[ JOIN-CONTAINER ]-----------*/
+.box-3-2{
+    width: 30vw;
+    height: 85vh;
+    background: black;
+    margin: 10vw;
+    object-fit: cover;
+    overflow: hidden;
+}
+/* -------------[ DONATE-IMAGE ]-----------*/
+.image-3-1{           
+    width: 30vw;
+    height: 85vh;
+    object-fit: cover;
+    overflow: hidden;
+    opacity: 60%;
+    border: 0;
+    transition: height 1s, width 1s, border 3s;
+}
+.image-3-1:hover{
+    isolation: isolate; 
+    height: 90vh;      
+    width: 40vw;
+    border: 2px solid #E0CCBE;
+}
+/* -------------[ JOIN-IMAGE ]-----------*/
+.image-3-2{             
+    width: 30vw;
+    height: 85vh;
+    object-fit: cover;
+    opacity: 60%;
+    border: 0;
+    transition: height 1s, width 1s, border 3s;
+}
+.image-3-2:hover{  
+    isolation: isolate; 
+    height: 90vh;      
+    width: 40vw;
+    border: 2px solid #E0CCBE;
+}
+/* -------------[ DONATE-TEXT ]-----------*/
+.text-3-1{              
+    position: absolute;
+    color:white ;
+    font-family:'Voltaire' ;
+    font-size: 60px;
+    margin-top: -50vh ;
+    margin-left: 7vw;
+    font-weight: bold;
+    z-index: 3;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 0.5s;
+    transition-delay: 0.5s;
+}
+.text-3-1.fade-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* -------------[ JOIN-TEXT ]-----------*/
+.text-3-2{          
+    position: absolute;
+    color:white ;
+    font-family:'Voltaire' ;
+    font-size: 60px;
+    margin-top: -50vh ;
+    margin-left: 9vw;
+    font-weight: bold;
+    z-index: 3;opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 0.5s;
+    transition-delay: 0.5s;
+}
+.text-3-2.fade-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+/*============================================[PAGE-4]=====================================================*/
+
+.page-4{
+    background: #100f0f;
+    height: 200vh;
+}
+/* -------------[ BACKGROUND-IMAGE ]-----------*/
+.bg-edu{
+    position: absolute;
+    height: 200vh;
+    margin-top: -10vh;
+    width: 100%;
+    mix-blend-mode:color-dodge;
+    opacity: 30%;
+}
+/* ------------[ GREEN-LIVING-TIPS ]----------*/
+.text-4-1{     
+    color:#E0CCBE ;
+    position: relative;
+    text-align: center;
+    font-family:'Voltaire' ;
+    font-size: 50px;
+    margin-top: 10vh;
+    margin-bottom: 10vh;    
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1s ease, transform 1s ease;
+}.text-4-1.fade-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* ------------[ GREEN-LIVING-TIPS ]----------*/
+.box-container-4{
+    height: 150vh;
+}
+.scroll-image{            
+    transition: top 0.3s; 
+    margin-top: 470vh;
+}
+/* ------------[ BOOK-CONTAINER ]----------*/
+#box-4-1{
+    position: absolute;
+    z-index: 1;
+    height: 70vh;
+    width: 18vw;
+    color: white;           
+    transition: top 0.3s; 
+}
+/* ------------[ VIDEO-CONTAINER ]----------*/
+#box-4-2{
+    position: absolute;
+    height: 100vh;
+    width: 35vw;
+    margin-top: 40vh;
+    margin-left: 27vw;
+    color: white;           
+    transition: top 0.3s; 
+    margin-top: 510vh;
+}
+/* ------------[ NEWS-CONTAINER ]----------*/
+#box-4-3{
+    position: absolute;
+    height: 90vh;
+    width: 30vw;
+    margin-top: 90vh;
+    margin-left: 70vw;
+    color: white;           
+    transition: top 0.3s; 
+    margin-top: 550vh;
+}
+/* ------------[ BOOK-VIDEO-NEWS IMAGE ]----------*/
+.image-4-1{
+    height: inherit;
+    width: inherit;
+}
+/* ------------[ BOOK-TEXT ]----------*/
+#books{
+    font-size: 40px;
+    position: absolute;
+    margin-top: -50vh;
+    color: white;
+    text-align: right;
+    z-index: 3;
+    isolation: isolate;
+    font-size: 20px;
+    width: 18vw;
+}
+.animated-text {
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 0.5s, transform 0.5s;
+}
+/* Define the final state of the text when it's in view */
+.animated-text.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ------------[ VIDEO-TEXT ]----------*/
+#video{
+    font-size: 40px;
+    position: absolute;
+    margin-top: -30vh;
+    color: white;
+    z-index: 3;
+    isolation: isolate;
+    font-size: 20px;
+    width: 18vw;
+}
+
+/* ------------[ NEWS-TEXT ]----------*/
+#news{
+    font-size: 40px;
+    position: absolute;
+    margin-top: -80vh;
+    margin-left: 10vw;
+    text-align: right;
+    color: white;
+    z-index: 3;
+    isolation: isolate;
+    font-size: 20px;
+    width: 18vw;
+}
+
+
+.heead{
+    color: #E0CCBE;
+    font-family: 'Voltaire';
+    font-size: 40px;
+}
+
+
+/*============================================[PAGE-5]=====================================================*/
+
+.page-5{
+    height: 355vh;
+    background: #100f0f;
+}
+/* ---------[ OUR-OFFERINGS-TEXT ]---------*/
+.text-container-5{   
+    color: #E0CCBE;
+    font-family: 'Voltaire';
+    text-align: center;
+    padding: 20vh;
+    font-size: 80px;
+    margin-bottom: 50vh;opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 0.5s;
+    transition-delay: 0.5s;
+}
+.text-container-5.fade-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --------[ PAGE-5-IAMGE-CONTAINERS ]--------*/
+.image-container-5-1 {
+    position: relative;
+    transform: translateY(-50%);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+/* -------[ STORE-IMAGE ]---------*/
+.image-5-1{         
+    width: 100vw;
+    height:200vh;
+    object-fit: cover;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: top 0.3s ease; 
+    opacity: 50%;
+}
+/* -------[ PLASTIC-IMAGE ]---------*/
+.image-5-2  {       
+    width: 100vw;
+    height:200vh;
+    object-fit: cover;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: top 0.3s ease; 
+    opacity: 60%;
+}
+/* -------[ FARMER-IMAGE ]---------*/
+.image-5-3  {       
+    width: 100vw;
+    height: 200vh;
+    object-fit: cover;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: top 0.3s ease; 
+    opacity: 60%;
+}
+/* -------[ PAGE-5-SERVICES-TEXT ]---------*/
+.text-5, .text-5-1, .text-5-2{
+    width: 100vw;
+    position: absolute;
+    isolation: isolate;
+    color: #fff  ;
+    text-align: center;
+    margin-top: 50vh;
+    font-family: 'voltaire';
+    font-size: 70px;opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s, transform 0.5s;
+            transition-delay: 0.5s;
+}
+.text-5.fade-up {
+    opacity: 1;
+    transform: translateY(0);
+}   
+.text-5-1.fade-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+.text-5-2.fade-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/*============================================[PAGE-6]=====================================================*/
+.page-6{
+    height: 100vh;
+}
+/* -------[ FOOTER-CONTAINER ]---------*/
+.footer{
+    background: #3C3633;
+    color: white;
+    margin-top: 90vh;
+    z-index: 1;
+    position: absolute;
+    margin-left: -10px;
+    opacity: 100%;
+}
+/* ------[ BACKGROUND-IMAGE-FOOTER ]-------*/
+.bg-footer{
+    margin-top: -150vh;
+    rotate: 270deg;
+    position: absolute;
+    height: 110vw;
+    width: 100vh;
+    margin-left: 25vw;
+    mix-blend-mode:exclusion;
+    opacity: 20%;
+}
+/* -------[ PAGE-6-TEXT ]---------*/
+.text-container-6{
+    width: 100vw;
+}
+/* -------[ INFROMATION-TEXT ]---------*/
+.box-container-6-1{
+    margin-left:-10px;
+    display: flex;
+    justify-content: space-between;
+}
+/* -------[ COPYRGIHT ]---------*/
+.box-6-1{
+    margin: 2vw;
+    margin-left: 6vw;
+    font-family: 'voltaire';
+}
+/* -------[ LOGO ]---------*/
+.box-6-2{
+    margin: 1vw;
+    margin-left: -25vw;
+    font-family: 'ZCOOL XiaoWei';
+    font-size: 30px;
+    color: #E0CCBE;
+}
+/* -------[ MADE BY ]---------*/
+.box-6-3{
+    margin: 2vw;
+    margin-left: -15vw;
+    font-family: 'voltaire';
+}
+span{
+    color: #E0CCBE;
+}
+/* -------[ QUOTE ]---------*/
+.box-container-6-2{
+    background-color: #100f0f;
+    font-family: 'Send Flowers';
+    text-align: center;
+    font-size: 25px;
+    word-spacing: 10px;
+}

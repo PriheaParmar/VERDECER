@@ -1,0 +1,189 @@
+body{
+    margin: 0;padding: 0;
+}
+
+.bg-join{       /* BACKGROUND TEXTURE  */
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+}
+
+.gradient {     /*  BACKGROUND GRADIENT */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle, #f5f5dcb0 5%, #7472648a  , #100f0f 50%);
+    background-size: 300% 300%;
+    transition: background-position 0.3s;
+}
+
+.header{            /* HEADER */
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    z-index: 3;
+    /* border: white 2px solid; */
+}
+
+.container-1-1{     /* MENU-LINES- CONTAINER */
+    height: 6vh;
+    width: 5vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    position: relative;
+    color: white;
+    text-align:center;
+    /* border: 2px solid white; */
+}
+
+.menu{          /*   MENU  */
+    position: fixed;
+}
+
+.line{              /* MENU-LINES */
+    width: 5vw;
+    height: 1.5px;
+    margin-top: 10px;
+    background:  linear-gradient(0.25turn ,#E0CCBE 10%,#3C3633 70%);;
+    transition: background 2s;
+}
+
+.container-1-1:hover .line{    /* MENU-CONTAINER */
+    background:  linear-gradient(0.25turn ,#3C3633 10%,#E0CCBE 70%);;
+}
+
+.container-1-2{          /* DONATE-CONTAINER */
+    border: 1px solid #747264;
+    height: 4vh;
+    width: 8vw;
+    border-radius: 40px;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 90vw;
+    font-family: 'Voltaire';
+    margin-top: 15px;
+    z-index: 3;
+}
+
+.container-1-2:hover{        /* DONATE-CONTAINER */
+    background: #747264;
+}
+
+.text-1-1{          /*  DONATE  */
+    color: white;
+    z-index: 3;
+    font-size: 34px;
+}
+
+a, a:link, a:visited, a:visited:active, a:link:active{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+
+.form-container:hover{       /*  FORM-CONTAINER  */
+    box-shadow: 2px 2px 30px 2px black;
+    transition: box-shadow 3s;
+}
+
+.amount{
+    display: flex;
+}
+
+.form-container {       /* Form-Container */
+    color: #EEEDEB;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40vw;
+    transform: translate(-50%, -50%);
+    background-color: #3C3633;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 5px solid #E0CCBE;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: 'Voltaire', sans-serif;
+    font-size: 30px;
+    color: #E0CCBE;
+}
+
+/* Style for form labels */
+.form-container label {
+    display: block;
+    font-family: 'ZCOOL XiaoWei', sans-serif;
+    font-size: 16px;
+}
+
+/* Style for form inputs */
+.form-container input,
+.form-container select,
+.form-container textarea {
+    width: 39vw;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #E0CCBE;
+    background-color: #b4b4b28a;
+    color: black;
+    font-family: 'Voltaire', sans-serif;
+    font-size: 15px;
+}
+
+/* Style for submit button */
+.form-container button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #E0CCBE;
+    color: #3C3633;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Voltaire', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Hover effect for submit button */
+.form-container button:hover {
+    background-color: #747264;
+    color: white;
+}
+
+/* Style for amount options */
+.amount {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.amount input[type="radio"] {
+    display: none;
+}
+.amount label {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #b4b4b28a;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Voltaire', sans-serif;
+    font-size: 16px;
+}
+.amount label:hover {
+    background-color: #747264;
+}
+.amount input[type="radio"]:checked + label {
+    background-color: #E0CCBE;
+    color: #3C3633;
+}

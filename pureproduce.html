@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PURE PRODUCE</title>
+
+<!--===============================================FONTS======================================-->
+<link href='https://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=ZCOOL XiaoWei' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Send Flowers' rel='stylesheet'>
+
+<!--===========================================STYLESHEETS====================================-->
+<link rel="stylesheet" href="scrollbar.css">
+<link rel="stylesheet" href="pureproduce.css">
+
+</head>
+
+<body>
+    <!-----------------------------[ HEADER ]------------------------------------> 
+    <div class="header">
+        <!---------------[ MENU ]---------------->
+        <a href="menu.html" class="container-1-1">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </a>
+        <!---------------[ VERDECER LOGO ]---------------->
+        <div class="logo"><a href="index.html">Verdecer<sup>&reg;</sup></a></div>
+        <!---------------[ DONATE BUTTON ]---------------->
+        <a href="http://localhost:3000/"><div class="container-1-2">Donate</div></a>
+    </div>
+    <!-----------------------------[ MAIN CONTENT ]------------------------------>
+    <div class="main">
+        <!------------[ BACKGROUND IMAGE ]----------->
+        <img src="bg-pureproduce.jpg" class="bg">
+        <!---------------[ TITLE ]---------------->
+        <div class="text-container-1-1">PureProduce</div>
+        <!---------------[ INTRO ]---------------->
+        <div class="text-container-1-2">
+            Your source for fresh, eco-friendly fruits and vegetables. Our produce is grown sustainably, without synthetic chemicals, to bring you the best of nature while protecting the planet. Join us in promoting healthy living and a sustainable future
+        </div>
+    <!---------------[ PURE-PRODUCE IMAGE CONTAINER ]---------------->
+    <div class="image-container-1">
+        <!---------------[ APPLE IMAGE ]---------------->
+        <div class="image-container-1-1">
+            <div class="apple">
+                <img class="image-1" src="apple.jpg">
+                <h1 class="text-1">Apple</h1>
+            </div>
+            <!---------------[ AVACODO IMAGE ]---------------->
+            <div class="avocado">
+                <img class="image-1" src="avacados.jpg">
+                <h1 class="text-2">Avocado</h1>
+            </div>
+            <!---------------[ BANANA IMAGE  ]---------------->
+            <div class="banana">
+                <img class="image-1" src="banana.jpg">
+                <h1 class="text-3">Banana</h1>
+            </div>
+        </div>
+        
+        <!---------------[ STRAWBERRY IMAGE ]---------------->
+        <div class="image-container-2">
+            <div class="strawberry">
+                <img class="image-2" src="strawberry.jpg">
+                <h1 class="text-4">Strawberry</h1>
+            </div>
+            <!---------------[ GRAPERS IMAGE ]---------------->
+            <div class="grapes">
+                <img class="image-2" src="grapes.jpg">
+                <h1 class="text-5">Grapes</h1>
+            </div>
+        </div>
+        
+        <!---------------[ VEGETABLE IMAGE ]---------------->
+        <div class="image-container-3">
+            <div class="vegetables">
+                <img class="image-3" src="vegetables.jpg">
+                <h1 class="text-6"> Vegetables</h1>
+            </div>
+            <!---------------[ FRUITS-IMAGE ]---------------->
+            <div class="fruits">
+                <img class="image-3" src="fruits.jpg">
+                <h1 class="text-7"> Fruits</h1>
+            </div>
+        </div>
+        <!---------------[ POTATO IMAGE ]---------------->
+        <div class="image-container-2">
+            <div class="potato">
+                <img class="image-2" src="potato.jpg">
+                <h1 class="text-8"> Potato</h1>
+            </div>
+            <!---------------[ SPINACH IMAGE ]---------------->
+            <div class="spinach">
+                <img class="image-2" src="spinach.jpg">
+                <h1 class="text-9">Spinach</h1>
+            </div>
+        </div>
+        <!---------------[ TOMATO IMAGE ]---------------->
+        <div class="image-container-1-1">
+            <div class="tomato">
+                <img class="image-1" src="tomatos.jpg">
+                <h1 class="text-10">Tomato</h1>
+            </div>
+            <!---------------[ CARROT IMAGE ]---------------->
+            <div class="carrot">
+                <img class="image-1" src="caroot.jpg">
+                <h1 class="text-11">Carrot</h1>
+            </div>
+            <!---------------[ CAULIFLOWER IMAGE ]---------------->
+            <div class="cauliflower">
+                <img class="image-1" src="cauliflower.jpg">
+                <h1 class="text-12">Cauliflower</h1>
+        </div>
+        </div>
+    </div>
+
+    <!---------------[ CENTRE LINE ]---------------->
+    <div class="line-bottom"></div>
+</div>
+
+</body>
+<script>
+/*======================================IMAGES-ANIMATION=======================================*/
+    window.addEventListener('scroll', () => {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+        const remainingScroll = scrollableHeight - scrolled;
+
+        const margin1 = Math.max(200 - scrolled, 0);
+        const margin2 = Math.max(300 - scrolled, 0);
+        const margin3 = Math.max(400 - scrolled, 0);
+
+        document.querySelectorAll('.image-container-2').forEach((element, index) => {
+            if (index === 0) {
+                element.style.marginTop = `${margin1}px`;
+            } else {
+                element.style.marginTop = `${margin2}px`;
+            }
+        });
+        document.querySelector('.image-container-3').style.marginTop = `${margin3}px`;
+    });
+/*========================================CENTRE LINE-=========================================*/
+    window.addEventListener('scroll', () => {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+        const remainingScroll = scrollableHeight - scrolled;
+        const lineHeight = (remainingScroll / scrollableHeight) * 100;
+        document.querySelector('.line-bottom').style.height = lineHeight + 'vh';
+    });
+</script>
+</html>
